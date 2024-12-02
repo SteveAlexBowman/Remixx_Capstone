@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - ReM!xx Recycling Project</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1>ReM!xx Recycling Project</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Subscribe</a>
+  </nav>
+</header>
+<main>
+  <section>
+    <h2>About Us</h2>
+    <p>
+      Welcome to the first iteration of the ReM!xx Recycling Project. This project is designed to empower consumers, households, and businesses to set up at-home or on-premise recycling systems for managing consumer packaging waste...
+    </p>
+  </section>
+  <br>
+  <br>
+  <section>
+    <h2>Pledge to ReM!xx...Recycle</h2>
+    <p>Join the ReM!xx Community by committing to reducing, reusing, and recycling. Make your pledge today!</p>
+    <form action="submit_pledge.php" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="state">State:</label>
+      <input type="text" id="state" name="state" required><br><br>
+
+      <label>
+        <input type="checkbox" id="pledge" name="pledge" required>
+        I pledge to reduce, reuse, and recycle.
+      </label><br><br>
+
+      <label for="recycling-level">Select your current ReM!xx level:</label>
+      <select id="recycling-level" name="recycling-level" required>
+        <option value="">--Select--</option>
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="advanced">Advanced</option>
+      </select><br><br>
+
+      <button type="submit">Submit Pledge</button>
+    </form>
+  </section>
+</main>
+<footer>
+  <p>&copy; 2024 ReM!xx Recycling Project. All rights reserved.</p>
+</footer>
+</body>
+</html>
