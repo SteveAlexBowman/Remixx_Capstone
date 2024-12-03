@@ -1,0 +1,73 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Applying a grid system to the body */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Header, main content, footer */
+  grid-template-columns: 1fr;       /* Single column for all sections */
+  min-height: 100vh;                /* Ensuring the body is at least the viewport height */
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', Arial, sans-serif; /* Applying Roboto font globally */
+}
+
+/* Header styling */
+header {
+  background-color: #333; /* Dark background */
+  color: white; /* White text for contrast */
+  text-align: center;
+  padding: 1em 0;
+  position: relative; /* Ensuring the title and navigation are aligned */
+  font-family: 'Roboto', Arial, sans-serif; /* Consistent Google-font for headers */
+}
+
+/* Footer styling */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  grid-column: 1; /* Span the full column */
+  position: sticky; /* Persisting the footer at the bottom */
+  bottom: 0; /* Affixing to the bottom of the viewport */
+  font-family: 'Roboto', Arial, sans-serif; /* Consistent Google-font for footers */
+}
+
+/* Navigation Bar Styling */
+nav {
+  display: flex;
+  justify-content: space-around; /* Spacing out menu items */
+  background-color: #444; /* Slightly lighter than the header */
+  padding: 0.5em 0;
+  margin-top: 0.5em; /* Adding spacing below the title */
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em; /* Adding padding around links */
+  font-weight: bold; /* Making links more prominent */
+  font-family: 'Roboto', Arial, sans-serif; /* Consistent font for navigation links */
+}
+
+nav a:hover {
+  background-color: #555; /* Adding Hover effect for better interactivity */
+  border-radius: 5px; /* Rounding corners with hover effect */
+}
+
+/* Image Styling */
+img {
+  max-width: 30%; /* Adjusting image size relative to the viewport width */
+  height: auto; /* Maintaining aspect ratio */
+  display: block; /* Removing inline spacing */
+  margin: 20px auto; /* Centering the image and add spacing */
+  border-radius: 10px; /* Adding rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+}
+
+/* Main content styling */
+main {
+  padding: 20px;
+  font-family: 'Roboto', Arial, sans-serif; /* Consistent Google-font for main content */
+}
