@@ -14,6 +14,11 @@ import perscholas.stevealexbowman.cap312.service.UserProfileService;
 
 import java.util.List;
 
+
+/*
+    Class handling HTTP requests for managing recycling inventory
+ */
+
 @Controller
 public class RecycleController {
     @Autowired
@@ -23,8 +28,10 @@ public class RecycleController {
     private UserProfileService userProfileService;
 
     @GetMapping("/recycle")
+    // @AuthenticationPrincipal -- retrieving the authenticated user's details
     public String viewRecyclePage(Model model, @AuthenticationPrincipal org.springframework.security.core.userdetails.User user) {
         String email = user.getUsername();
+        // Fetching the recycling inventory associated with the logged-in user
         List<RecycleInventory> inventory = recycleInventoryService.getInventoryByUserEmail(email);
         model.addAttribute("inventory", inventory);
         return "recycle";
@@ -39,7 +46,7 @@ public class RecycleController {
         // Retrieve email from the authenticated user
         String email = user.getUsername();
 
-        // Fetch the UserProfile based on the email
+        // Fetch the UserProfile based on the email using findByEmail method from UserProfileService
         UserProfile userProfile = userProfileService.findByEmail(email);
 
         // Create a new RecycleInventory object

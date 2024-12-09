@@ -22,7 +22,7 @@ public class PledgeController {
         return "about";
     }
 
-    // Ensure the form action matches this route
+    // The form action from about.html matches this route
     @PostMapping("/about/pledge/submit")
     public String submitPledge(
             @RequestParam String name,

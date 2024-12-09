@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Add an event listener for the 'submit' event on the form
     contactForm.addEventListener("submit", function(event) {
 
-      // Retrieve the values entered in the "name" and "email" fields
+      // Retrieve the values entered by the "name" and "email" fields
       const name = document.getElementById("name").value;
       const email = document.getElementById("email").value;
 

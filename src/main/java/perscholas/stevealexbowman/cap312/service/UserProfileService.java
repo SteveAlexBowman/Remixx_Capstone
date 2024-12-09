@@ -9,13 +9,17 @@ import perscholas.stevealexbowman.cap312.repository.UserProfileRepository;
 
 import java.util.List;
 
-@Service
+/*
+    Class containing the business logic for managing user profiles.
+ */
+
+@Service //Marking the class as a service, making it a spring-managed bean
 public class UserProfileService {
 
     private final UserProfileRepository userProfileRepository;
     private final PasswordEncoder passwordEncoder;
 
-    @Autowired
+    @Autowired // Automatically handling DI for UserProfileRepository
     public UserProfileService(UserProfileRepository userProfileRepository, PasswordEncoder passwordEncoder) {
         this.userProfileRepository = userProfileRepository;
         this.passwordEncoder = passwordEncoder;
@@ -43,11 +47,14 @@ public class UserProfileService {
 
     // Register a new user
     public UserProfile registerUser(UserProfile userProfile) {
+        // Checking if a user with the given email already exists in the database
         if (userProfileRepository.existsByEmail(userProfile.getEmail())) {
+            // throwing an exception if the email is already registered
             throw new IllegalStateException("Email already in use");
         }
-        // Encode the user's password
+        // Encoding the user's password using BCryptPasswordEncoder before saving to database
         userProfile.setPassword(passwordEncoder.encode(userProfile.getPassword()));
+        // Persisting the user into the database utilizing the UserProfileRepository layer
         return userProfileRepository.save(userProfile);
     }
 }
