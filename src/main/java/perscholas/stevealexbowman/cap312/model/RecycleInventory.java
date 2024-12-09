@@ -3,7 +3,7 @@ package perscholas.stevealexbowman.cap312.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "inventory")
+@Table(name = "recycle_inventory")
 public class RecycleInventory {
 
     @Id
@@ -15,6 +15,10 @@ public class RecycleInventory {
 
     @Column(nullable = false)
     private Integer quantity;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private UserProfile user; // Reference to the UserProfile entity
 
     // Getters and Setters
     public Long getId() {
@@ -40,4 +44,14 @@ public class RecycleInventory {
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
+
+    public UserProfile getUser() {
+        return user;
+    }
+
+    public void setUser(UserProfile user) {
+        this.user = user;
+    }
 }
+
+

@@ -26,13 +26,18 @@
     <a href="/">Home</a>
     <a href="/about">About</a>
     <a href="/recycle">Recycle</a>
+    <form th:action="@{/logout}" method="post" style="display: inline;">
+      <input type="hidden" name="_csrf" th:value="${_csrf.token}">
+      <button type="submit">Logout</button>
+    </form>
   </nav>
 </header>
 <main>
   <section>
     <h2>Subscribe Now!</h2>
     <p>Subscribe to receive email updates regarding the ReM!xx Recycling Project!</p>
-    <form action="submit_form.js" method="post" onsubmit="validateForm(event)">
+    <form action="/subscribe/add" method="post" onsubmit="validateForm(event)">
+      <input type="hidden" name="_csrf" th:value="${_csrf.token}">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required><br><br>
       <label for="email">Email:</label>
@@ -41,6 +46,7 @@
       <textarea id="message" name="message" rows="4" required></textarea><br><br>
       <button type="submit">Submit</button>
     </form>
+
   </section>
 </main>
 <footer>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - ReM!xx Recycling Project</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 <header>
@@ -13,6 +13,10 @@
     <a href="/">Home</a>
     <a href="/recycle">Recycle</a>
     <a href="/subscribe">Subscribe</a>
+    <form th:action="@{/logout}" method="post" style="display: inline;">
+      <input type="hidden" name="_csrf" th:value="${_csrf.token}">
+      <button type="submit">Logout</button>
+    </form>
   </nav>
 </header>
 <main>
@@ -27,7 +31,9 @@
   <section>
     <h2>Pledge to ReM!xx...Recycle</h2>
     <p>Join the ReM!xx Community by committing to reducing, reusing, and recycling. Make your pledge today!</p>
-    <form action="submit_pledge.js" method="post">
+    <form action="/about/pledge/submit" method="post">
+      <input type="hidden" name="_csrf" th:value="${_csrf.token}">
+
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required><br><br>
 
@@ -49,6 +55,8 @@
 
       <button type="submit">Submit Pledge</button>
     </form>
+
+
   </section>
 </main>
 <footer>

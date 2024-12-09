@@ -11,18 +11,24 @@
     <h1>ReM!xx Recycling Project</h1>
     <nav>
         <a href="/">Home</a>
+        <a href="/register">Register</a>
         <a href="/about">About</a>
         <a href="/subscribe">Subscribe</a>
         <a href="/recycle">Recycle</a>
-
+        <form th:action="@{/logout}" method="post" style="display: inline;">
+            <input type="hidden" name="_csrf" th:value="${_csrf.token}">
+            <button type="submit">Logout</button>
+        </form>
+<!--        <a href="/users">Users</a>-->
     </nav>
+
 </header>
 
 <main>
     <section>
         <h2>Welcome to ReM!xx</h2>
         <p>Where We Put The Spin In Recycling!</p>
-        <img src="img/ReM!xx.jpeg" alt="Recycling image">
+        <img src="/img/digitalrecycling.webp" alt="Recycling image">
     </section>
 </main>
 
